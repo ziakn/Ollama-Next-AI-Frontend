@@ -1,33 +1,68 @@
-import AgentCard from "../components/AgentCard";
+import Card from './../components/AgentCard'; // ✅ Import the Card component
 
 const agents = [
   {
     id: 1,
-    name: "John Doe",
-    description: "Top real estate agent with 10 years of experience.",
-    image: "/images/agent1.jpg",
+    name: 'Zayna',
+    slug: 'zayna',
+    description: 'Natural language expert specializing in Arabic comprehension and sentiment analysis.',
+    icon: 'bi-chat-left-text',
+    type: 'Language AI',
+    badgeIcon: 'bi-translate',
   },
   {
     id: 2,
-    name: "Jane Smith",
-    description: "Specialist in luxury apartments and villas.",
-    image: "/images/agent2.jpg",
+    name: 'Rafiq',
+    slug: 'rafiq',
+    description: 'Your intelligent virtual assistant for smart Q&A and task automation.',
+    icon: 'bi-robot',
+    type: 'Assistant AI',
+    badgeIcon: 'bi-lightning-charge-fill',
   },
   {
     id: 3,
-    name: "Mike Johnson",
-    description: "Expert in commercial real estate investments.",
-    image: "/images/agent3.jpg",
+    name: 'Sahm',
+    slug: 'sahm',
+    description: 'AI strategist for market insights, analytics, and decision-making.',
+    icon: 'bi-graph-up-arrow',
+    type: 'Insight AI',
+    badgeIcon: 'bi-bar-chart-line-fill',
+  },
+  {
+    id: 4,
+    name: 'Nour',
+    slug: 'nour',
+    description: 'Creative powerhouse generating text, visuals, and brand stories.',
+    icon: 'bi-palette2',
+    type: 'Creative AI',
+    badgeIcon: 'bi-stars',
+  },
+  {
+    id: 5,
+    name: 'Ameer',
+    slug: 'ameer',
+    description: 'Enterprise-grade AI for cybersecurity and infrastructure defense.',
+    icon: 'bi-shield-shaded',
+    type: 'Security AI',
+    badgeIcon: 'bi-lock-fill',
   },
 ];
 
 export default function AgentsPage() {
   return (
-    <div className="min-h-screen bg-gray-100 p-8">
-      <h1 className="text-4xl font-bold text-center mb-12">Our Agents</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div className="container py-5">
+      <h1 className="text-center mb-5">Meet AlSharq Tech AI Agents</h1>
+      <div className="row g-4">
         {agents.map((agent) => (
-          <AgentCard key={agent.id} agent={agent} />
+          <Card
+            key={agent.id}
+            icon={agent.icon}
+            name={agent.name}
+            type={agent.type}
+            badgeIcon={agent.badgeIcon}
+            description={agent.description}
+            slug={agent.slug}
+          />
         ))}
       </div>
     </div>
