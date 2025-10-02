@@ -1,42 +1,54 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
+/* globals.css */
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
+  font-family: 'Geist', sans-serif;
+  color: #fff;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.navbar {
+  background: linear-gradient(135deg, #ff00e4, #f22f10); /* Vibrant gradient for navbar */
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+.navbar .navbar-nav .nav-link {
+  color: white !important; /* Ensures the links are white */
+  transition: color 0.3s;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.navbar .navbar-nav .nav-link:hover {
+  color: #f22f10 !important; /* Change link color on hover */
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.navbar .navbar-toggler-icon {
+  background-color: #fff; /* White color for toggler icon */
+}
+
+.navbar .btn-outline-light {
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.navbar .btn-outline-light:hover {
+  background-color: #fff;
+  color: #ff00e4;
+  border-color: #f22f10;
+}
+
+/* Card styles for login page and others */
+.card {
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+
+.btn-primary {
+  background-color: #ff00e4;
+  border-color: #f22f10;
+}
+
+.btn-primary:hover {
+  background-color: #f22f10;
+  border-color: #ff00e4;
 }
