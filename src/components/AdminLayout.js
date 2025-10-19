@@ -10,7 +10,7 @@ export default function AdminLayout({ children }) {
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (!token) {
-      router.push('/login'); // redirect if not logged in
+      router.push('/auth/login'); // redirect if not logged in
       return;
     }
 
@@ -20,7 +20,7 @@ export default function AdminLayout({ children }) {
       setUser(payload);
     } catch (err) {
       localStorage.removeItem('token');
-      router.push('/login');
+      router.push('/auth/login');
     }
   }, []);
 
