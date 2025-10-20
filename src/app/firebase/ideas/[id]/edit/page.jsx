@@ -5,6 +5,7 @@ import { db, storage } from "../../../../../lib/firebase";
 import { doc, getDoc, updateDoc, serverTimestamp } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL, deleteObject } from "firebase/storage";
 import { useRouter, useParams } from "next/navigation";
+import Layout from "@/app/firebase/components/Layout";
 
 export default function EditIdea() {
   const [title, setTitle] = useState("");
@@ -100,6 +101,8 @@ export default function EditIdea() {
   };
 
   return (
+    <Layout>
+
     <div className="container mt-5">
       <div className="row justify-content-center">
         <div className="col-md-8">
@@ -196,5 +199,5 @@ export default function EditIdea() {
         </div>
       </div>
     </div>
-  );
+  </Layout>);
 }

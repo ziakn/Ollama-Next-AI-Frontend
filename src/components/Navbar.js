@@ -45,6 +45,12 @@ export default function Navbar() {
             <li className="nav-item">
               <Link className="nav-link" href="/dashboard">Dashboard</Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" href="/auth/login">Admin Project</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" href="/firebase/login">Firebase Project</Link>
+            </li>
             
           </ul>
 

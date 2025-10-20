@@ -6,6 +6,7 @@ import { collection, query, where, onSnapshot, deleteDoc, doc } from "firebase/f
 import { ref, deleteObject } from "firebase/storage";
 import { useRouter } from "next/navigation";
 import { onAuthStateChanged } from "firebase/auth";
+import Layout from "../components/Layout";
 
 export default function IdeasDashboard() {
   const [ideas, setIdeas] = useState([]);
@@ -64,6 +65,7 @@ export default function IdeasDashboard() {
   if (!user) return null;
 
   return (
+    <Layout>
     <div className="container mt-5">
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h2 className="fw-bold">Your Ideas</h2>
@@ -142,5 +144,5 @@ export default function IdeasDashboard() {
         </div>
       )}
     </div>
-  );
+    </Layout> );
 }

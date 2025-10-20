@@ -5,6 +5,7 @@ import { db, storage, auth } from "../../../../lib/firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { useRouter } from "next/navigation";
+import Layout from "../../components/Layout";
 
 export default function AddIdea() {
   const [title, setTitle] = useState("");
@@ -85,6 +86,8 @@ export default function AddIdea() {
   };
 
   return (
+    <Layout>
+
     <div className="container mt-5">
       <div className="row justify-content-center">
         <div className="col-md-8">
@@ -181,5 +184,5 @@ export default function AddIdea() {
         </div>
       </div>
     </div>
-  );
+  </Layout>);
 }
